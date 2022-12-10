@@ -18,7 +18,7 @@ In 2018, colorectal cancer was reported as one of the most common types of diagn
 
 # Workflow overview:
 
-The objective of this project was to create a workflow that would take paired-end sequence files to process through the DADA2 pipeline as part of nf-core/Ampliseq. Resulting output files should include sequence quality and dada2 output files showing the number of species assigned to each sample categorized by ASV ID. Further analysis can be conducted on R to generate relative abundance plots.
+The objective of this project was to create a workflow that would take paired-end sequence files to process through the DADA2 pipeline as part of nf-core/Ampliseq. Resulting output files should include sequence quality and dada2 output files showing the number of species assigned to each sample categorized by ASV ID. Further analysis can be conducted on R to visualize abundance.
 
 https://nf-co.re/ampliseq
 
@@ -26,7 +26,7 @@ The main steps of the workflow include:
 1) Unzipping the fastq.gz files
 2) Splitting the fastq files into respective forward (R1) and reverse (R2) reads
 3) Performing fastp to check for quality and determine a trimming length
-4) Zipping the fastq.gz files
+4) Zipping the fastq files
 5) Running the DADA2 pipeline in nf-core environment with parameters obtained from the fastp summary
 
 # Setting up the environment
