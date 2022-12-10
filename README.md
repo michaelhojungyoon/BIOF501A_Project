@@ -21,10 +21,10 @@ The objective of this project was to create a workflow that would take paired-en
 https://nf-co.re/ampliseq
 
 The main steps of the workflow include:
-1) Unzipping the fastq.gz file
-2) Splitting the fastq file into a separate forward (R1) and reverse (R2) file
+1) Unzipping the fastq.gz files
+2) Splitting the fastq files into respective forward (R1) and reverse (R2) reads
 3) Performing fastp to check for quality and determine a trimming length
-4) Zipping the fastq.gz file
+4) Zipping the fastq.gz files
 5) Running the DADA2 pipeline with parameters obtained from the fastp summary
 
 # Setting up the environment
@@ -36,13 +36,55 @@ conda deactivate
 
 Download this repository
 ```sh
-git clone https://github.com/michaelhojungyoon/BIOF501A_Project
+git clone https://github.com/michaelhojungyoon/BIOF501A_Project.git
 ```
 
+Create conda environment (processing) using the myenv.environment.yml file
+```sh
+conda create -f myenv_environment.yml
+```
 
-# Results:
+Create conda enviroment (nf-core) using nf-core_environemnt.yml file
+```sh
+conda create -f nf-core_environment.yml
+```
 
+Open the nf-core environment and download ampliseq (v2.4.1) -> singularity -> none
+```sh
+conda activate nf-core
+nf-core list
+nf-core download ampliseq
+conda deactivate
+```
 
+# Running the workflow:
+Ensure sequence files are located in sequences folder. Afterwards, ensure that you are in the work directory with the workflow.nf file. Output files should be located in sequences/sequences_split labeled <sequence>.noext.fastq.gz
+```sh
+conda activate myenv
+nextflow run workflow.nf -c nextflow.config
+```
+
+Deactivate the environment
+```sh
+conda deactivate
+```
+
+Switch to the nf-core enviroment and run the following command. The pipeline will take approximately 10-20 minutes.
+Note: --max_memory limit can be removed if memory is not an issue.
+```sh
+conda activate nf-core
+nextflow run nf-core/ampliseq --input "references/samplesheet.tsv" --FW_primer "CCTACGGGNGGCWGCAG" --RV_primer "GGACTACHVGGGTATCTAAT" --trunclenf 280 --trunclenr 240 --outdir "nf-core results" -profile singularity --max_memory '110.GB' 
+```
+
+# Expected results
+In results folder, output fastp files for quality checking should look as followed:
+
+# Troubleshooting
+If workflow.nf does not completely finish all steps, it will have to be re-run to complete step-by-step as it tends to stop executing after it completes one task.
+
+If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)"
+
+Then --ignore_empty_input_files can be added to the command to ignore input files that are too small.
 
 # References:
 1. Debelius, J. W. et al. The local tumor microbiome is associated with survival in late-stage colorectal cancer patients. 2022.09.16.22279353 Preprint at https://doi.org/10.1101/2022.09.16.22279353 (2022).
