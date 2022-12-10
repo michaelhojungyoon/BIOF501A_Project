@@ -1,0 +1,4 @@
+sampleID	forwardReads	reverseReads
+samp1	results/fastp_ERR10493209.noext_R1.fastq.gz	results/fastp_ERR10493209.noext_R2.fastq.gz
+samp2	results/fastp_ERR10493210.noext_R1.fastq.gz	results/fastp_ERR10493210.noext_R2.fastq.gz
+samp3	results/fastp_ERR10493211.noext_R1.fastq.gz	results/fastp_ERR10493211.noext_R2.fastq.gz
