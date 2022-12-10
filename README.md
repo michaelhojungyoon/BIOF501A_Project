@@ -16,7 +16,7 @@ In 2018, colorectal cancer was reported as one of the most common types of diagn
 
 # Workflow overview:
 
-The objective of this project was to create a workflow that would take paired-end sequence files to process through the DADA2 pipeline as part of nf-core/Ampliseq:
+The objective of this project was to create a workflow that would take paired-end sequence files to process through the DADA2 pipeline as part of nf-core/Ampliseq. Resulting output files should include sequence quality and dada2 output files showing the number of species assigned to each sample categorized by ASV ID. Further analysis can be conducted on R to generate relative abundance plots.
 
 https://nf-co.re/ampliseq
 
@@ -77,9 +77,23 @@ nextflow run nf-core/ampliseq --input "references/samplesheet.tsv" --FW_primer "
 ```
 
 # Expected results
-In results folder, output fastp files for quality checking should look as followed:
-  
-In nf-core results folder, abundance tables for each sample (samp1, samp2, samp3) should
+In results folder, output fastp files for quality checking are stored as html files and should look similar to the following:
+
+Read 1:
+![](./figures/ERR10493211_R1_fastp.png)
+
+Read 2:
+![](./figures/ERR10493211_R2_fastp.png)
+
+In nf-core results/dada2, there will be a DADA2_stats.tsv file to show filtered reads and a DADA2_table.tsv file to show ASV IDs associated with each sample.
+
+DADA2_stats.tsv:
+![](./figures/dada2_stats.png)
+
+DADA2_table.tsv:
+![](./figures/dada2_table.png)
+
+In addition to these output files, there are other files showing error logs, qiime2 results, multiqc results, and more.
 
 # Troubleshooting
 1) Running workflow.nf appears to stop after completion of each step. May have to run the workflow multiple times to complete each of the steps.
