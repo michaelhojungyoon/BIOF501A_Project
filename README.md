@@ -106,8 +106,9 @@ In addition to these output files, there are other files showing error logs, qii
 
 # Troubleshooting
 1) Running workflow.nf appears to stop after completion of each step. May have to run the workflow multiple times to complete each of the steps.
-2) If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)". Alternatively, removing all generated files and re-running the workflow to remake the files may resolve the issue.
- 
+2) If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)". 
+Either re-run the workflow by first removing all the generated files with the commands as listed or add --ignore_empty_input_files to the nf-core command.
+
 Files that need to be deleted before re-running:
 ```sh
 cd sequences
@@ -117,8 +118,6 @@ rm *
 cd results
 rm *
 ```
-
-Then --ignore_empty_input_files can be added to the command to ignore input files that are too small.
 
 # References:
 1. Debelius, J. W. et al. The local tumor microbiome is associated with survival in late-stage colorectal cancer patients. 2022.09.16.22279353 Preprint at https://doi.org/10.1101/2022.09.16.22279353 (2022).
