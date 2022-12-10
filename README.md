@@ -39,14 +39,16 @@ Download this repository
 git clone https://github.com/michaelhojungyoon/BIOF501A_Project.git
 ```
 
+Add on the following directories:
+```sh
+mkdir results
+mkdir sequences/sequences_split
+mkdir nf-core results
+```
+
 Create conda environment (processing) using the myenv.environment.yml file
 ```sh
 conda create -f myenv_environment.yml
-```
-
-Create conda enviroment (nf-core) using nf-core_environemnt.yml file
-```sh
-conda create -f nf-core_environment.yml
 ```
 
 Open the nf-core environment and download ampliseq (v2.4.1) -> singularity -> none
@@ -55,6 +57,11 @@ conda activate nf-core
 nf-core list
 nf-core download ampliseq
 conda deactivate
+```
+
+Create conda enviroment (nf-core) using nf-core_environemnt.yml file
+```sh
+conda create -f nf-core_environment.yml
 ```
 
 # Running the workflow:
@@ -98,7 +105,8 @@ In addition to these output files, there are other files showing error logs, qii
 # Troubleshooting
 1) Running workflow.nf appears to stop after completion of each step. May have to run the workflow multiple times to complete each of the steps.
 2) If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)". Alternatively, removing all generated files and re-running the workflow to remake the files may resolve the issue.
-  
+ 
+Files that need to be deleted before re-running:
 ```sh
 cd sequences
 rm *noext
