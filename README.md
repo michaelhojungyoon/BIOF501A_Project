@@ -53,17 +53,17 @@ Create conda environment (processing) using the myenv.environment.yml file
 conda create -f myenv_environment.yml
 ```
 
+Create conda enviroment (nf-core) using nf-core_environemnt.yml file
+```sh
+conda create -f nf-core_environment.yml
+```
+
 Open the nf-core environment and download ampliseq (v2.4.0) -> singularity -> none
 ```sh
 conda activate nf-core
 nf-core list
 nf-core download ampliseq
 conda deactivate
-```
-
-Create conda enviroment (nf-core) using nf-core_environemnt.yml file
-```sh
-conda create -f nf-core_environment.yml
 ```
 
 # Running the workflow:
