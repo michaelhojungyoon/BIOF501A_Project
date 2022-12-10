@@ -3,7 +3,7 @@
 #### By: Michael Yoon
 
 #### Disclaimer
-Sequence files were obtained from the NCBI SRA archive as part of the study "The local tumor microbiome is associated with survival in late-stage colorectal cancer patients" [1]. Experimental samples chosen were obtained from late-stage (III & IV) colorectal cancer patients. Metadata and files can be found here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=ERP142569&o=acc_s%3Aa
+Sequence files were obtained from the NCBI SRA archive as part of the study "The local tumor microbiome is associated with survival in late-stage colorectal cancer patients" [1]. Experimental samples chosen were obtained from late-stage (III & IV) colorectal cancer patients. Metadata and files downloaded here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=ERP142569&o=acc_s%3Aa
 
 Primers used in this workflow were derived from the study and are as followed:
 
