@@ -3,7 +3,7 @@
 #### By: Michael Yoon
 
 #### Disclaimer
-Sequence files were obtained from the NCBI SRA archive as part of the study "The local tumor microbiome is associated with survival in late-stage colorectal cancer patients" [1]. Experimental samples chosen were obtained from late-stage (III & IV) colorectal cancer patients. Metadata for patient info can be found here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=ERP142569&o=acc_s%3Aa
+Sequence files were obtained from the NCBI SRA archive as part of the study "The local tumor microbiome is associated with survival in late-stage colorectal cancer patients" [1]. Experimental samples chosen were obtained from late-stage (III & IV) colorectal cancer patients. Metadata for patient info can be found here: https://www.ncbi.nlm.nih.gov/Traces/study/?acc=ERP142569&o=acc_s%3Aa or a simplified version is avaible for download in the references folder.
 
 Primers used in this workflow were derived from the study and are as followed:
 
@@ -78,11 +78,21 @@ nextflow run nf-core/ampliseq --input "references/samplesheet.tsv" --FW_primer "
 
 # Expected results
 In results folder, output fastp files for quality checking should look as followed:
+  
+In nf-core results folder, abundance tables for each sample (samp1, samp2, samp3) should
 
 # Troubleshooting
-If workflow.nf does not completely finish all steps, it will have to be re-run to complete step-by-step as it tends to stop executing after it completes one task.
-
-If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)"
+1) Running workflow.nf appears to stop after completion of each step. May have to run the workflow multiple times to complete each of the steps.
+2) If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)". Alternatively, removing all generated files and re-running the workflow to remake the files may resolve the issue.
+  
+```sh
+cd sequences
+rm *noext
+cd sequences/sequences_split
+rm *
+cd results
+rm *
+```
 
 Then --ignore_empty_input_files can be added to the command to ignore input files that are too small.
 
