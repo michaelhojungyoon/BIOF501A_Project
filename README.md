@@ -50,12 +50,12 @@ mkdir nf-core results
 
 Create conda environment (processing) using the myenv.environment.yml file
 ```sh
-conda create -f myenv_environment.yml
+conda create -f myenv_environment.yml -n myenv
 ```
 
 Create conda enviroment (nf-core) using nf-core_environemnt.yml file
 ```sh
-conda create -f nf-core_environment.yml
+conda create -f nf-core_environment.yml -n nf-core
 ```
 
 Open the nf-core environment and download ampliseq (v2.4.0) -> singularity -> none
