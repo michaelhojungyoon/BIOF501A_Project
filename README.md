@@ -29,7 +29,15 @@ The main steps of the workflow include:
 
 # Setting up the environment
 
+Deactivate current environment
+```sh
+conda deactivate
+```
 
+Download this repository
+```sh
+git clone https://github.com/michaelhojungyoon/BIOF501A_Project
+```
 
 
 # Results:
@@ -40,3 +48,5 @@ The main steps of the workflow include:
 1. Debelius, J. W. et al. The local tumor microbiome is associated with survival in late-stage colorectal cancer patients. 2022.09.16.22279353 Preprint at https://doi.org/10.1101/2022.09.16.22279353 (2022).
 2. Bray, F. et al. Global cancer statistics 2018: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries. CA. Cancer J. Clin. 68, 394–424 (2018).
 3. Kuipers, E. J. et al. COLORECTAL CANCER. Nat. Rev. Dis. Primer 1, 15065 (2015).
+4. Rebersek, M. Gut microbiome and its role in colorectal cancer. BMC Cancer 21, 1325 (2021).
+5. Veziant, J., Villéger, R., Barnich, N. & Bonnet, M. Gut Microbiota as Potential Biomarker and/or Therapeutic Target to Improve the Management of Cancer: Focus on Colibactin-Producing Escherichia coli in Colorectal Cancer. Cancers 13, 2215 (2021).
