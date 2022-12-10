@@ -12,9 +12,7 @@ Forward: CCTACGGGNGGCWGCAG
 Reverse: GGACTACHVGGGTATCTAAT
 
 # Introduction:
-In 2018, colorectal cancer was reported as one of the most common types of diagnosed cancers ranking 3rd in incidence and 2nd in mortality world wide [2]. Colorectal cancer can cause an array of negative symptoms including fatigue, blood in stool, and abdominal pain which can all negatively impact a patient's quality of life [3]. Generally, the disease is diagnosed by a colonoscopy exam to determine the location of the tumour, however, the technique is known to be fairly invasive and other methods of detection can be beneficial for compliance. In recent times, research has shown how the gut microbiome is associated with the tumour microenvironment within colorectal cancer patients 
-
-where certain bacterial strains were identified to be potentially procarinogenic based on their role in producing harmful products during the metabolism [4]. For these reasons, identifying these bacterial strains related to colorectal cancer development is necessary in developing treatment methods targetting the gut microbiome.
+In 2018, colorectal cancer was reported as one of the most common types of diagnosed cancers ranking 3rd in incidence and 2nd in mortality world wide [2]. Colorectal cancer can cause an array of negative symptoms including fatigue, blood in stool, and abdominal pain which can all negatively impact a patient's quality of life [3]. Generally, the disease is diagnosed by a colonoscopy exam to determine the location of the tumour, however, the technique is known to be fairly invasive and other methods of detection can be beneficial for compliance. In recent times, research has shown how the gut microbiome is associated with colorectal cancer development where certain bacterial strains were identified to be procarinogenic through the conversion of diestary metabolites into harmful microbial products [4]. T
 
 # Workflow overview:
 
