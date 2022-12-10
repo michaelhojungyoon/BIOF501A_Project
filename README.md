@@ -107,7 +107,7 @@ In addition to these output files, there are other files showing error logs, qii
 # Troubleshooting
 1) Running workflow.nf appears to stop after completion of each step. May have to run the workflow multiple times to complete each of the steps.
 2) If nf-core ampliseq command gives the following warning message: "At least one input file for the following sample(s) was too small (<1KB)". 
-Either re-run the workflow by first removing all the generated files with the commands as listed or add --ignore_empty_input_files to the nf-core command.
+Either re-run the workflow by first removing all the generated files with the commands as listed or add --ignore_empty_input_files to the nf-core command. 
 
 Files that need to be deleted before re-running:
 ```sh
@@ -117,6 +117,11 @@ cd sequences/sequences_split
 rm *
 cd results
 rm *
+```
+
+3) If myenv environment can't be unloaded from the .yml file, install the fastp dependency with:
+```sh
+conda install -c bioconda fastp
 ```
 
 # References:
